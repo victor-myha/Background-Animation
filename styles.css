@@ -1,0 +1,111 @@
+/* #headerContainer {
+    width: 100vw;
+    height: 952px;
+    background-image: url('./assets/mountain.png');
+    background-blend-mode: color;
+    background-repeat: no-repeat;
+    background-size: auto;
+} */
+body {
+    height: 100vh;
+    background-image: url('./assets/mountain.png');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circles {
+    transform: rotate(90deg);
+}
+
+.row {
+    display: flex;
+    flex: 0 1 100%;
+}
+
+.circle {
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    margin: 18px 16px;
+    border-radius: 50%;
+    transform-origin: top center;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+
+    /* TODO add scale(1.1); */
+    0% {
+        transform: rotate(0)
+        scale(1.1);
+    }
+
+    /* TODO add scale(0.2); */
+    50% {
+        transform: rotate(180deg)
+        scale(0.2);
+    }
+
+    /* TODO add scale(1.1); */
+    100% {
+        transform: rotate(360deg)
+        scale(1.1);
+    }
+}
+
+.row:nth-child(1) .circle {
+    animation-delay: 100ms;
+}
+
+/* = 0.1s */
+.row:nth-child(2) .circle {
+    animation-delay: 200ms;
+}
+
+/* = 0.1s */
+.row:nth-child(3) .circle {
+    animation-delay: 300ms;
+}
+
+/* = 0.1s */
+.row:nth-child(4) .circle {
+    animation-delay: 400ms;
+}
+
+/* = 0.1s */
+.row:nth-child(5) .circle {
+    animation-delay: 500ms;
+}
+
+/* = 0.1s */
+.row:nth-child(6) .circle {
+    animation-delay: 600ms;
+}
+
+/* = 0.1s */
+.row:nth-child(7) .circle {
+    animation-delay: 700ms;
+}
+
+/* = 0.1s */
+.row:nth-child(8) .circle {
+    animation-delay: 800ms;
+}
+
+/* = 0.1s */
+.row:nth-child(9) .circle {
+    animation-delay: 900ms;
+}
+
+/* = 0.1s */
+.row:nth-child(10) .circle {
+    animation-delay: 1000ms;
+}
+
+/* = 0.1s */
+.row:nth-child(11) .circle {
+    animation-delay: 1100ms;
+}
+
+/* = 0.1s */

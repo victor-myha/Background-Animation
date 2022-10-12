@@ -1,79 +1,390 @@
 <html>
+
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head><!-- w    ww    .  d  em   o   2s  .    c o  m -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="index.css">
+</head>
+
 <body>
-    <canvas id='dest' width='460' height='460'>Oh-oh</canvas>
-    <script type='text/javascript'>
-window.addEventListener('load', onDocLoaded, false);
-function drawCircle(x, y, radius, ctx, col)
-{
-   ctx.save();
-   if (col == undefined)
-      col = 'black';
-   ctx.strokeStyle = col;
-   ctx.lineWidth = 1;
-   ctx.beginPath();
-   ctx.arc(x,y,radius,(Math.PI/180)*0, (Math.PI/180)*360, false);
-   ctx.stroke();
-   ctx.closePath();
-   ctx.restore();
-}
-function fillCircle(x,y,radius,ctx,col)
-{
-   ctx.save();
-   if (col == undefined)
-      col = 'black';
-   ctx.strokeStyle = col;
-   ctx.lineWidth = 1;
-   ctx.beginPath();
-   ctx.arc(x,y,radius,(Math.PI/180)*0, (Math.PI/180)*360, false);
-   ctx.stroke();
-   ctx.fill();
-   ctx.restore();
-}
-function calcPos(angle, radius)
-{
-   var angleDeg = angle * 3.14159 / 180.0;
-   var x = Math.sin(angleDeg);
-   var y = Math.cos(angleDeg);
-   return {x:x*radius, y:y*radius};
-}
-var angleOffset = 0;
-function onDocLoaded()
-{
-   runAnim();
-}
-function runAnim()
-{
-   drawFrame(angleOffset);
-   angleOffset += 7;
-    angleOffset %= 360;
-      setTimeout(runAnim, 30);
-}
-function drawFrame(angleOffset)
-{
-   var can = document.getElementById('dest');
-   var ctx = can.getContext('2d');
-   var x, y, xStep, yStep;
-   ctx.clearRect(0,0,can.width,can.height);
-   for (yStep=0; yStep<21; yStep++)
-   {
-      angle = yStep * (360 / 16);
-      angle += angleOffset;
-      y = yStep * 460/20 + 0.5;
-      for (xStep=0; xStep<21; xStep++)
-      {
-         x = xStep * 460/20 + 0.5;
-         // drawCircle(x,y, 21, ctx);
-         var pos = calcPos(angle, 21);
-         pos.x += x;
-         pos.y += y;
-         fillCircle(pos.x,pos.y,3,ctx,'red');
-         angle += (360 / 16);
-      }
-   }
-}
-  </script>
+   <div class="circles">
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+      <div class="row">
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+         <div class="circle"></div>
+      </div>
+   </div>
+   <!-- <section id="headerContainer">
+      <canvas id='dest' width="1431" height="460">Oh-oh</canvas>
+      <script type='text/javascript'>
+         window.addEventListener('load', onDocLoaded, false);
+         
+         const width = 1431;
+         // function drawCircle(x, y, radius, ctx, col) {
+         //    ctx.save();
+         //    if (col == undefined)
+         //       col = 'black';
+         //    ctx.strokeStyle = col;
+         //    ctx.lineWidth = 1;
+         //    ctx.beginPath();
+         //    ctx.arc(x, y, radius, (Math.PI / 180) * 0, (Math.PI / 180) * 360, false);
+         //    ctx.stroke();
+         //    ctx.closePath();
+         //    ctx.restore();
+         // }
+
+         function fillCircle(x, y, radius, ctx, col) {
+            ctx.save();
+            if (col == undefined)
+               col = 'white';
+            ctx.strokeStyle = col;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, (Math.PI / 180) * 0, (Math.PI / 180) * 360, false);
+            ctx.stroke();
+            ctx.fill();
+            ctx.restore();
+         }
+
+         function calcPos(angle, radius) {
+            var angleDeg = angle * 3.14159 / 150.0;
+            var x = Math.sin(angleDeg);
+            var y = Math.cos(angleDeg);
+            return {
+               x: x * radius,
+               y: y * radius * 2
+            };
+         }
+         var angleOffset = 0;
+
+         function onDocLoaded() {
+            runAnim();
+         }
+
+         function runAnim() {
+            drawFrame(angleOffset);
+            angleOffset += 2; // wave speed
+            angleOffset %= 360;
+            setTimeout(runAnim, 30);
+         }
+
+         function drawFrame(angleOffset) {
+            var can = document.getElementById('dest');
+            var ctx = can.getContext('2d');
+            var x, y, xStep, yStep;
+            ctx.clearRect(0, 0, can.width, can.height);
+            // yStep к-ть хвиль
+            for (yStep = 0; yStep < 1; yStep++) {
+               angle = yStep * (360 / 16);
+               angle += angleOffset;
+               y = yStep * width / 20 + 0.5;
+               for (xStep = 0; xStep < 21; xStep++) {
+                  x = xStep * width / 20 + 0.5;
+                  // drawCircle(x,y, 21, ctx);
+                  var pos = calcPos(angle, 21);
+                  pos.x += x;
+                  pos.y += y;
+                  fillCircle(pos.x, pos.y, 2, ctx, 'white');
+                  angle += (360 / 16);
+               }
+            }
+         }
+      </script>
+   </section> -->
 </body>
+
 </html>
